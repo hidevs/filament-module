@@ -1,0 +1,43 @@
+{
+    "name": "hidevs/filament-module",
+    "description": "",
+    "type": "laravel-module",
+    "authors": [
+        {
+            "name": "HiDevs Studioi",
+            "email": "hidevs.studio@gmail.com"
+        },
+        {
+            "name": "JalalLinuX",
+            "email": "smjjalalzadeh93@gmail.com"
+        }
+    ],
+    "require": {
+        "hidevs/general-module": "dev-main",
+        "ariaieboy/filament-jalali": "^2.1",
+        "bezhansalleh/filament-shield": "^4.0",
+        "ysfkaya/filament-phone-input": "^4.0",
+        "filament/filament": "^4.0"
+    },
+    "extra": {
+        "module-dir": "Filament",
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Filament\\": "app/",
+            "Modules\\Filament\\Database\\Factories\\": "database/factories/",
+            "Modules\\Filament\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Filament\\Tests\\": "tests/"
+        }
+    }
+}
