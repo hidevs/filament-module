@@ -4,6 +4,8 @@ namespace Modules\Filament\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\Filament\Filament\Forms\Components\TextInput;
+use Modules\Filament\Filament\Tables\Columns\TextColumn;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -27,6 +29,8 @@ class FilamentServiceProvider extends ServiceProvider
 //        $this->registerConfig();
 //        $this->registerViews();
 //        $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
+
+        $this->registerMacros();
     }
 
     /**
@@ -36,6 +40,17 @@ class FilamentServiceProvider extends ServiceProvider
     {
 //        $this->app->register(EventServiceProvider::class);
 //        $this->app->register(RouteServiceProvider::class);
+    }
+
+    public function registerMacros()
+    {
+        TextInput::macro('dir', function (string $dir): static {
+            return $this->extraInputAttributes(['dir' => $dir], true);
+        });
+
+        TextColumn::macro('dir', function (string $dir): static {
+            return $this->extraAttributes(['dir' => $dir], true);
+        });
     }
 
     /**
