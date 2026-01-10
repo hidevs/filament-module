@@ -2,10 +2,10 @@
 
 namespace Modules\Filament\Filament\Pages;
 
-use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\HtmlString;
+use Modules\Filament\Filament\Forms\Components\TextInput;
 
 class Login extends \Filament\Auth\Pages\Login
 {
@@ -17,7 +17,8 @@ class Login extends \Filament\Auth\Pages\Login
             ->required()
             ->autocomplete()
             ->autofocus()
-            ->extraInputAttributes(['tabindex' => 1, 'dir' => 'ltr']);
+            ->extraInputAttributes(['tabindex' => 1])
+            ->dir('ltr');
     }
 
     protected function getPasswordFormComponent(): Component
@@ -29,6 +30,7 @@ class Login extends \Filament\Auth\Pages\Login
             ->revealable(filament()->arePasswordsRevealable())
             ->autocomplete('current-password')
             ->required()
-            ->extraInputAttributes(['tabindex' => 2, 'dir' => 'ltr']);
+            ->extraInputAttributes(['tabindex' => 2])
+            ->dir('ltr');
     }
 }
