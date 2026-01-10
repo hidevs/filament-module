@@ -12,7 +12,6 @@ class EnumInput extends Select
         return parent::make($name)
             ->label(__("validation-attributes.{$name}"))
             ->native(false)
-            ->searchable()
-            ->options(EnumGender::options());
+            ->searchable();
     }
 }
