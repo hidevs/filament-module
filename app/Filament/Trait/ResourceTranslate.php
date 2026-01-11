@@ -3,6 +3,7 @@
 namespace Modules\Filament\Filament\Trait;
 
 use Illuminate\Support\Str;
+use UnitEnum;
 use function Filament\Support\get_model_label;
 
 trait ResourceTranslate
@@ -10,6 +11,11 @@ trait ResourceTranslate
     public static function getLabel(): ?string
     {
         return __("validation-attributes.".get_model_label(static::getModel()));
+    }
+
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __("validation-attributes.".static::$navigationGroup);
     }
 
     public static function getModelLabel(): string
