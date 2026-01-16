@@ -15,7 +15,7 @@ trait ResourceTranslate
 
     public static function getNavigationGroup(): string|UnitEnum|null
     {
-        return __("validation-attributes.".static::$navigationGroup);
+        return !is_null(static::$navigationGroup) ? __("validation-attributes.".static::$navigationGroup) : null;
     }
 
     public static function getModelLabel(): string
