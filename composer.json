@@ -15,6 +15,7 @@
     "require": {
         "hidevs/general-module": "dev-main",
         "ariaieboy/filament-jalali": "^2.1",
+        "ariaieboy/filament-currency": "^2.0",
         "bezhansalleh/filament-shield": "^4.0",
         "ysfkaya/filament-phone-input": "^4.0",
         "filament/filament": "^4.0"
