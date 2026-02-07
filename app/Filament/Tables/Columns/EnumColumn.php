@@ -9,7 +9,7 @@ class EnumColumn extends TextColumn
         return parent::make($name)
             ->label(__("validation-attributes.{$name}"))
             ->badge()
-            ->color(fn ($state) => $state->color())
-            ->formatStateUsing(fn ($state) => $state->label());
+            ->color(fn ($state) => $state?->color())
+            ->formatStateUsing(fn ($state) => $state?->label());
     }
 }
