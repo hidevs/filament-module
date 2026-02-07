@@ -2,13 +2,18 @@
 
 namespace Modules\Filament\Filament\Tables\Columns;
 
-class DateTimeColumn extends TextColumn
+class DateColumn extends TextColumn
 {
     public static function make(?string $name = null): static
     {
         return parent::make($name)
             ->label(__("validation-attributes.{$name}"))
-            ->jalaliDateTime()
+            ->jalaliDate()
             ->toggleable(isToggledHiddenByDefault: true);
+    }
+
+    public function withTime(?string $format = null, ?string $timezone = null): DateColumn
+    {
+        return $this->jalaliDateTime($format, $timezone);
     }
 }
